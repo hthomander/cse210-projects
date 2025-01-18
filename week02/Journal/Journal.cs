@@ -40,7 +40,8 @@ public record Journal
         {
             foreach (var entry in _entries)
             {
-                writer.WriteLine($"{entry.DateTime}|{entry.Prompt}|{entry.Response}");
+                string formattedDate = entry.DateTime.ToString("yyyy-MM-dd HH:mm:ss"); //ISO-like format
+                writer.WriteLine($"{formattedDate} | {entry.Prompt} | {entry.Response}");
             }
         }
     }
@@ -59,8 +60,25 @@ public record Journal
                     var parts = line.Split('|');
                     if (parts.Length == 3)
                     {
-                        DateTime entryDate = DateTime.ParseExact(parts[0], "yyyy-MM-dd HH:mm:ss", null);
-                        _entries.Add(new Entry(parts[1], parts [2], entryDate));
+                        //trim any leading or trailing spaces
+                        string dateString = parts[0].Trim();
+                        string prompt = parts[1].Trim();
+                        string response = parts [2].Trim();
+
+                        //debuggin output for parts
+                        Console.WriteLine($"Reading line: '{line}'");
+                        Console.WriteLine($"Parsed date: '{dateString}', Prompt: '{prompt}', Response: '{response}'");
+
+
+                        DateTime entryDate; 
+                        if (DateTime.TryParseExact(dateString, "yyyy-MM-dd HH:mm:ss", null, System.Globalization.DateTimeStyles.None, out entryDate))
+                        {
+                            _entries.Add(new Entry(prompt, response, entryDate));
+                        }
+                        else 
+                        {
+                            Console.WriteLine($"Invalid date format in entry: {dateString}");
+                        }
                     }
                 }
             }
