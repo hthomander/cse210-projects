@@ -75,10 +75,6 @@ public record Journal
                         {
                             _entries.Add(new Entry(prompt, response, entryDate));
                         }
-                        else 
-                        {
-                            Console.WriteLine($"Invalid date format in entry: {dateString}");
-                        }
                     }
                 }
             }
