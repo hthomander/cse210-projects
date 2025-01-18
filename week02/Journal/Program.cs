@@ -18,6 +18,7 @@ class Program
         while (true)
         {
             //show menu options
+            Console.WriteLine("\nSelect an option:");
             Console.WriteLine("1. Write a new entry");
             Console.WriteLine("2. Display journal entries");
             Console.WriteLine("3. Save journal to a file");
@@ -44,6 +45,12 @@ class Program
                 {
                     Console.WriteLine("Enter filename to save your journal entry:");
                     string filename = Console.ReadLine();
+                    //ensure user has valid input
+                    if (string.IsNullOrWhiteSpace(filename))
+                    {
+                        Console.WriteLine("Filename cannot be empty.");
+                        continue;
+                    }
                     journal.SaveJournal(filename);
                     Console.WriteLine($"Journal entry saved successfully to {filename}");
                 }
