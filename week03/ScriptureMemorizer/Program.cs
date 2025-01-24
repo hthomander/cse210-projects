@@ -5,11 +5,14 @@ class Program
     static void Main()
     {
         string reference = "John 3:16";
-        string text = "For Gob so loved the world that He gave His only Son, that whoever believes in Him should not perish but have eternal life.";
+        string text = "For God so loved the world that He gave His only Son, that whoever believes in Him should not perish but have eternal life.";
 
+       while (true)
+       {
         Scripture scripture = new Scripture(reference, text);
 
         scripture.DisplayScripture();
+
 
         while (true)
         {
@@ -18,10 +21,11 @@ class Program
 
             if (input =="quit")
             {
-                break;
+                Console.WriteLine("Thanks for trying! Try more later!!");
+                return;
             }
 
-            scripture.HideRandomWord();
+            scripture.HideRandomWordInIncrements();
             scripture.DisplayScripture();
 
             if (scripture.Words.All(w => w.IsHidden))
@@ -30,4 +34,17 @@ class Program
                 break;
             }
         }
+
+        Console.WriteLine("Would you like to try again? (yes/no)");
+        string restartInput = Console.ReadLine().Trim().ToLower();
+
+        if (restartInput !="yes")
+        {
+            Console.WriteLine("Thanks for practicing!");
+            break;
+        }
     }
+}
+
+}
+    

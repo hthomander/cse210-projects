@@ -13,14 +13,25 @@ public class Scripture
         Words = text.Split(' ').Select(w => new Word(w)).ToList();
     }
 
-    public void HideRandomWord()
+    public void HideRandomWordInIncrements()
         {
             var visibleWords = Words.Where(w => !w.IsHidden).ToList();
-            if (visibleWords.Count > 0)
+            if (visibleWords.Count > 3)
             {
                 Random rand = new Random();
-                var wordToHide = visibleWords[rand.Next(visibleWords.Count)];
-                wordToHide.IsHidden = true;
+                var wordsToHide = visibleWords.OrderBy(w => rand.Next()).Take(3).ToList();
+                foreach (var word in wordsToHide)
+                {
+                    word.IsHidden = true;
+                    
+                }
+            }
+            else if (visibleWords.Count > 0)
+            {
+                foreach ( var word in visibleWords)
+                {
+                    word.IsHidden = true;
+                }
             }
         }
 
