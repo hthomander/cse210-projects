@@ -18,7 +18,7 @@ class Program
         Console.WriteLine($"Author: {video1.Author}");
         Console.WriteLine($"Length: {video1.Length} seconds");
         Console.WriteLine($"Number of comments: {video1.GetNumberOfComments()}");
-        video1.DisplayCommments();
+        video1.DisplayComments();
 
         Comment comment4 = new Comment("Dave", "Amazing content!");
         Video video2 = new Video("Mastering Algorithms", "Hazel Thomander", 720);

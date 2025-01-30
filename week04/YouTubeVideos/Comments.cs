@@ -8,7 +8,7 @@ public class Comment
 
     public Comment(string commentName, string commentText)
     {
-        CommenterName = CommenterName;
+        CommenterName = commenterName;
         CommentText = commentText;
     }
 }
