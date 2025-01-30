@@ -8,7 +8,7 @@ public class Customer
     public Customer(string name, Address address)
     {
         Name = name;
-        CustomerAddress = addresss;
+        CustomerAddress = address;
     }
 
     public bool IsInUSA()

@@ -21,7 +21,7 @@ class Program
 
         Address internationalAddress = new Address("456 Pine St", "London", "ENG", "UK");
         Customer internationalCustomer = new Customer("Jane Doe", internationalAddress);
-        order internationalOrder = new order(internationalCustomer);
+        Order internationalOrder = new Order(internationalCustomer);
         internationalOrder.AddProduct(new Product("Tablet", "P54321", 499.99f, 1));
 
         Console.WriteLine("\n" + internationalOrder.GetPackingLabel());
