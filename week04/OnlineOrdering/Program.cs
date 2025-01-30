@@ -28,3 +28,4 @@ class Program
         Console.WriteLine(internationalOrder.GetShippingLabel());
         Console.WriteLine($"Total Price: ${internationalOrder.CalculateTotalPrice()}");
     }
+}
