@@ -5,7 +5,7 @@ public abstract class Activity
 {
     protected string _name;
     protected string _description;
-    protected string _duration;
+    protected int _duration;
 
     public Activity(string name, string description)
     {
@@ -31,12 +31,12 @@ public abstract class Activity
     }
 
     protected void Pause(int seconds)
-    (
-        for (int i - 0; i < seconds; i++)
+    {
+        for (int i = 0; i < seconds; i++)
         {
             Thread.Sleep(1000);
             Console.Write(".");
         }
         Console.WriteLine();
-    )
+    }
 }

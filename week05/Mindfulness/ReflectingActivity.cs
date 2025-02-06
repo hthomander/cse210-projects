@@ -29,12 +29,22 @@ public class ReflectingActivity : Activity
         Random rand = new Random();
         string prompt = prompts[rand.Next(prompts.Count)];
         Console.WriteLine(prompt);
+        Pause(5);
 
-        foreach (var question in questions)
+        int timeRemaining = _duration;
+        while (timeRemaining > 0)
+        {
+
+            foreach (var question in questions)
         {
             Console.WriteLine(question);
             Pause(3);
+            timeRemaining -=3;
+            if (timeRemaining <= 0) break;
         }
-        EndActivity();
+
+    }
+    
+    EndActivity();
     }
 }
