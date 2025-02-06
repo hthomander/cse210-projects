@@ -46,7 +46,7 @@ public abstract class Activity
 
             Console.Write($"{seconds - i} seconds remaining... \r");
             Thread.Sleep(1000);
-            Console.Write("\b\b\b\b\b");
+            Console.Clear();
         }
         Console.WriteLine();
     }
