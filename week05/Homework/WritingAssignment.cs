@@ -1,6 +1,6 @@
 using System;
 
-public class WritingAssignment : WritingAssignment
+public class WritingAssignment : Assignment
 {
     private string _title;
 
@@ -12,6 +12,6 @@ public class WritingAssignment : WritingAssignment
 
         public string GetWritingInformation()
         {
-            return$"{_title} by {GetStudentName()}";
+            return $"{_title} by {GetStudentName()}";
         }
 }

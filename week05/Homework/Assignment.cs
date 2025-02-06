@@ -2,8 +2,8 @@ using System;
 
 public class Assignment 
 {
-    private string_studentName;
-    private string_topic;
+    private string _studentName;
+    private string _topic;
 
     public Assignment(string studentName, string topic)
     {
