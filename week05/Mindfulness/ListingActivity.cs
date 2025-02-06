@@ -30,14 +30,16 @@ public class ListingActivity : Activity
 
         int count = 0;
         string input;
+        
+        int remainingTime = int.Parse(_duration);
 
 
-        while(int.Parse(_duration) > 0)
+        while(remainingTime > 0)
         {
             Console.WriteLine("Enter an item: ");
             input = Console.ReadLine();
             count++;
-            _duration--;
+            remainingTime--;
 
             Pause(1);
         }
