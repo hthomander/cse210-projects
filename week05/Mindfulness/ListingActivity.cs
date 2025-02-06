@@ -31,7 +31,7 @@ public class ListingActivity : Activity
         int count = 0;
         string input;
         
-        int remainingTime = int.Parse(_duration);
+        int remainingTime = _duration;
 
 
         while(remainingTime > 0)
