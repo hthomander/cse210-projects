@@ -1,0 +1,3 @@
+simple, give a talk in sacrament, 175, True
+eternal, read the scriptures, 1000, 1000
+checklist, visit temple 10 times, 250,1,10, 50
